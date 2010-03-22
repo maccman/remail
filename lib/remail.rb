@@ -6,10 +6,10 @@ module Remail
   end
   module_function :site=
   
-  def app_name=(name)
+  def app_id=(name)
     self.site = "http://#{name}.appspot.com"
   end
-  module_function :app_name=
+  module_function :app_id=
   
   def api_key=(key)
     Email.headers["Authorization"] = key
