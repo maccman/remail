@@ -31,18 +31,18 @@ paid version, 7,400,000 emails per day.
 ## Receiving email
 * Configure the callback URL in your Remail App Engine.
 * Create a email controller, that looks a bit like this (remember to configure the routes):
-  
-  class EmailsController < ApplicationController
-    skip_before_filter :verify_authenticity_token
 
-    def create
-      if request.headers["Authorization"] != your_api_key
-        return head(:unauthorized)
+    class EmailsController < ApplicationController
+      skip_before_filter :verify_authenticity_token
+
+      def create
+        if request.headers["Authorization"] != your_api_key
+          return head(:unauthorized)
+        end
+        UserMailer.receive(params[:email][:raw])
+        head :success
       end
-      UserMailer.receive(params[:email][:raw])
-      head :success
     end
-  end
   
 The API key is also passed through as an Authorization header,
 you should definitely validate that.
