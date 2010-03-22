@@ -42,7 +42,7 @@ Then create a email controller, that looks a bit like this (remember to configur
               return head(:unauthorized)
             end
             UserMailer.receive(params[:email][:raw])
-            head :success
+            head :ok
           end
         end
 
