@@ -9,10 +9,18 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Alex MacCaw"]
-  s.date = %q{2010-03-21}
+  s.date = %q{2010-03-22}
   s.email = %q{info@eribium.org}
   s.extra_rdoc_files = [
     "README.markdown"
+  ]
+  s.files = [
+    ".gitignore",
+     "README.markdown",
+     "Rakefile",
+     "VERSION",
+     "lib/remail.rb",
+     "remail.gemspec"
   ]
   s.homepage = %q{http://github.com/maccman/remail}
   s.rdoc_options = ["--charset=UTF-8"]

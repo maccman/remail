@@ -29,8 +29,9 @@ paid version, 7,400,000 emails per day.
   If you want to send email on behalf of the application but do not want to use a single administrator's personal Google Account as the sender, you can create a new Google Account for the application using any valid email address, then add the new account as an administrator for the application.
   
 ## Receiving email
-* Configure the callback URL in your Remail App Engine.
-* Create a email controller, that looks a bit like this (remember to configure the routes):
+First, configure the callback URL in your Remail App Engine.
+
+Then create a email controller, that looks a bit like this (remember to configure the routes):
 
         class EmailsController < ApplicationController
           skip_before_filter :verify_authenticity_token
@@ -43,17 +44,15 @@ paid version, 7,400,000 emails per day.
             head :success
           end
         end
-  
-The API key is also passed through as an Authorization header,
-you should definitely validate that.
 
-You might want to add :email to the filter_parameters configuration, you 
-don't want your logs being clogged up with emails.
+
+The API key is passed through in the Authorization header, you should definitely validate that.
+
+You might want to add :email to the filter_parameters configuration - you don't want your logs being clogged up with emails.
 
 Your app can receive email at addresses of the following form:
   string@appid.appspotmail.com
     
 ## Misc
 
-To ensure your email doesn't get caught in spam filters, you should follow 
-the tips in this tutorial I [wrote](http://madebymany.co.uk/getting-email-around-spam-filters-00221) - the important points being setting SPF and MX records.
+To ensure your email doesn't get caught in spam filters, you should follow the tips in this tutorial I [wrote](http://madebymany.co.uk/getting-email-around-spam-filters-00221) - the important points being setting SPF and MX records.
