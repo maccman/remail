@@ -9,9 +9,9 @@ Google App Engine gives you a free quota of 2000 emails per day or, with the
 paid version, 7,400,000 emails per day.
 
 ## Features
-* POST emails to your Remail App Engine in order to send them
-* Remail POSTS received emails back to a configurable URL
-* Will retry sending emails if endpoint not available
+* ActionMailer POSTs emails to your Remail App Engine in order to send them
+* Remail POSTs received emails back to a configurable URL
+* Remail will retry the callback if the endpoint is not available
 
 ## Setup
 * Configure and deploy the [Remail App Engine](http://github.com/maccman/remail-engine)
