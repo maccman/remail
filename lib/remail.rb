@@ -19,6 +19,7 @@ module Remail
   class Email < ActiveResource::Base
     self.timeout = 5
     self.format  = :json
+    self.include_root_in_json = false
     
     cattr_accessor :headers
     @@headers = {}
